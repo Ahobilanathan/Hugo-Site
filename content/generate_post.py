@@ -48,26 +48,32 @@ def generate_post(keyword):
         print("Error: OpenAI API key not found. Please set OPENAI_API_KEY in your .env file.")
         return None
 
-    prompt = f"""Write a concise but informative blog post about {keyword}. 
-    Keep it focused and practical. Include:
-    - Brief introduction
-    - 3-4 main points with examples
-    - Short conclusion
-    Format in Markdown with clear headings."""
+    prompt = f"""Write a detailed blog post about {keyword}. 
+    The post should be informative and valuable for readers.
+    
+    Include:
+    1. An engaging introduction
+    2. Main sections with clear explanations
+    3. Practical examples and use cases
+    4. Best practices and tips
+    5. A conclusion with key takeaways
+    
+    Format the response in Markdown with proper headings and formatting.
+    Keep the content focused and well-structured."""
     
     try:
-        print("Generating post using OpenAI...")
+        print(f"Generating post about {keyword} using OpenAI...")
         client = openai.OpenAI(api_key=OPENAI_API_KEY)
         response = client.chat.completions.create(
-            model="gpt-4.1-nano",  # Using the new nano model
+            model="gpt-4.1-nano",
             messages=[
-                {"role": "system", "content": "You are a technical writer who creates concise, practical content."},
+                {"role": "system", "content": "You are a technical writer specializing in AI and technology topics. Write clear, informative content that provides value to readers."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0.7,
-            max_tokens=1000
+            max_tokens=2000  # Set to 2000 tokens as requested
         )
-        print("Successfully generated post!")
+        print(f"Successfully generated post about {keyword}!")
         return response.choices[0].message.content
     except Exception as e:
         print(f"Error generating post: {str(e)}")
@@ -85,7 +91,7 @@ def save_post(keyword, content):
 title: "{keyword}"
 date: {today.strftime('%Y-%m-%dT%H:%M:%S%z')}
 draft: false
-description: "A practical guide to {keyword}"
+description: "A detailed guide to {keyword}"
 tags: ["AI", "Technology", "Tools"]
 ---
 
@@ -103,15 +109,16 @@ def main():
         print("No keywords available. Please add keywords to keywords.txt")
         return
     
-    # Generate posts for the first 3 keywords
-    for keyword in keywords[:3]:
-        content = generate_post(keyword)
-        if content:
-            filename = save_post(keyword, content)
-            mark_keyword_used(keyword)
-            print(f"Successfully generated post: {filename}")
-        else:
-            print(f"Failed to generate post for keyword: {keyword}")
+    # Generate one post per run
+    keyword = keywords[0]  # Get the first unused keyword
+    content = generate_post(keyword)
+    
+    if content:
+        filename = save_post(keyword, content)
+        mark_keyword_used(keyword)
+        print(f"Successfully generated post: {filename}")
+    else:
+        print(f"Failed to generate post for keyword: {keyword}")
 
 if __name__ == "__main__":
     main() 
