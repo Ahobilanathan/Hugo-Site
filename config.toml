@@ -1,0 +1,16 @@
+baseURL = 'https://yourusername.github.io/ai-tools-hugo-site/'
+languageCode = 'en-us'
+title = 'AI Tools Blog'
+theme = 'ananke'
+
+[params]
+  description = "AI-powered insights and tools for modern technology"
+  author = "AI Content Generator"
+  showShareButtons = true
+  showReadingTime = true
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true 
