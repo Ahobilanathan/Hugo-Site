@@ -4,3 +4,4 @@ Reinforcement Learning Basics
 AI in Cybersecurity
 Cloud Computing and AI Integration
 Data Science Best Practices
+AI in Financial Technology
