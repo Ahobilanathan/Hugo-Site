@@ -6,3 +6,4 @@ Cloud Computing and AI Integration
 Data Science Best Practices
 AI in Financial Technology
 Edge Computing and AI
+Quantum Computing and AI
