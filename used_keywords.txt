@@ -8,3 +8,4 @@ AI in Financial Technology
 Edge Computing and AI
 Quantum Computing and AI
 AI in Education Technology
+Big Data Analytics with AI
