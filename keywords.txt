@@ -1,4 +1,3 @@
-AI in Internet of Things
 Blockchain and AI Integration
 AI in Robotics
 Natural Language Generation
