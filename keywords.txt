@@ -1,4 +1,3 @@
-Natural Language Generation
 Computer Vision in Healthcare
 AI in Supply Chain Management
 Machine Learning Model Deployment
