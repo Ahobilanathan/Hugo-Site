@@ -14,3 +14,4 @@ Blockchain and AI Integration
 AI in Robotics
 Natural Language Generation
 Computer Vision in Healthcare
+AI in Supply Chain Management
