@@ -19,3 +19,4 @@ Machine Learning Model Deployment
 AI in Customer Service
 Predictive Analytics with AI
 AI in Agriculture Technology
+Deep Learning for Image Recognition
