@@ -21,3 +21,4 @@ Predictive Analytics with AI
 AI in Agriculture Technology
 Deep Learning for Image Recognition
 AI in Transportation
+Natural Language Understanding
